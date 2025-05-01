@@ -1,0 +1,50 @@
+<Page x:Class="SteraLauncher.Pages.Login"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Evoke OGFN Login" Background="#0F172A" Height="720" Width="1280">
+
+    <Grid>
+        <!-- Login Panel -->
+        <Border Background="#151A26" Width="420" Height="520" CornerRadius="12" 
+                HorizontalAlignment="Center" VerticalAlignment="Center" Padding="30">
+
+            <StackPanel>
+                <TextBlock Text="Welcome to Evoke OGFN" FontSize="28" FontWeight="Bold" Foreground="White" 
+                           HorizontalAlignment="Center"/>
+                <TextBlock Text="Login to access your account" FontSize="14" Foreground="Gray" 
+                           HorizontalAlignment="Center" Margin="0,5,0,25"/>
+
+                <!-- Email Input -->
+                <Grid Margin="0,5,0,15">
+                    <Border Background="#1E293B" CornerRadius="8" Padding="12">
+                        <TextBox x:Name="EmailTextBox" Foreground="White" Background="Transparent"
+                                 FontSize="16" BorderThickness="0"
+                                 TextChanged="EmailTextBox_TextChanged"/>
+                    </Border>
+                    <TextBlock x:Name="EmailPlaceholder" Text="Enter your email" Foreground="Gray" FontSize="14" 
+                               VerticalAlignment="Center" Margin="15,0,0,0" Opacity="0.6"
+                               IsHitTestVisible="False"/>
+                </Grid>
+
+                <!-- Password Input -->
+                <Grid Margin="0,5,0,20">
+                    <Border Background="#1E293B" CornerRadius="8" Padding="12">
+                        <PasswordBox x:Name="PasswordBox" Foreground="White" Background="Transparent"
+                                     FontSize="16" BorderThickness="0"
+                                     PasswordChanged="PasswordBox_PasswordChanged"/>
+                    </Border>
+                    <TextBlock x:Name="PasswordPlaceholder" Text="Enter your password" Foreground="Gray" FontSize="14" 
+                               VerticalAlignment="Center" Margin="15,0,0,0" Opacity="0.6"
+                               IsHitTestVisible="False"/>
+                </Grid>
+
+                <!-- Login Button -->
+                <Button Content="Login" Height="50" Background="#5D5FEF" Foreground="White" 
+                        FontSize="18" FontWeight="Bold" Cursor="Hand" Click="OnLoginButtonClick"
+                        BorderThickness="0"/>
+
+                <!-- Support Link -->
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>

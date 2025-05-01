@@ -1,0 +1,119 @@
+﻿<Page x:Class="SteraLauncher.Pages.Home"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Evoke OGFN Home" Background="#0F172A" Height="720" Width="1280">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            <!-- Sidebar -->
+            <ColumnDefinition Width="*"/>
+            <!-- Main Content -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <Border Background="#151A26" Grid.Column="0" VerticalAlignment="Stretch">
+            <StackPanel Margin="10">
+                <TextBlock Text="Evoke OGFN" Foreground="White" FontSize="32" FontWeight="Bold" 
+                           Margin="10" HorizontalAlignment="Center"/>
+
+                <Button Content="Home" Style="{DynamicResource CleanButton}" Background="#2563EB" Click="HomeButton_Click"/>
+                <Button Content="Library" Style="{DynamicResource CleanButton}" Click="LibraryButton_Click"/>
+                <Button Content="Settings" Style="{DynamicResource CleanButton}" Click="SettingsButton_Click"/>
+                <Button Content="Discord Server" Style="{DynamicResource CleanButton}" Background="#5865F2" Click="DiscordButton_Click"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Main Content -->
+        <StackPanel Margin="20,30,30,30" Grid.Column="1">
+            <TextBlock Text="Welcome Back!" Foreground="White" FontSize="28" FontWeight="Bold" Name="UserNameBox"/>
+            <TextBlock Text="Rediscover Fortnite Chapter 1 Season 6 with Evoke OGFN!" 
+                       Foreground="Gray" FontSize="16" Margin="0,5,0,15"/>
+
+            <!-- Game + News Side by Side -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="99*"/>
+                    <ColumnDefinition Width="0"/>
+                    <!-- Space between cards -->
+                    <ColumnDefinition Width="95*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Game Card -->
+                <Border Background="#1E293B" CornerRadius="10" Padding="15" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,0,370,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="0*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Stretch="Fill" Opacity="0.6" Source="/Pages/1_iQyC_6Yfd_r3MpsgyxBPnQ.png"/>
+
+                        <!-- Dark Overlay -->
+                        <Rectangle Fill="#80000000" RadiusX="10" RadiusY="10"/>
+
+                        <!-- Game Info -->
+                        <StackPanel Margin="20,0,6,20" VerticalAlignment="Bottom" Height="103">
+                            <TextBlock Text="Darkness Rises - Evoke OGFN" Foreground="White" FontSize="22" FontWeight="Bold"/>
+                            <TextBlock Text="Fortnite 6.21-CL-4526925" Foreground="Gray" FontSize="14"/>
+                            <Button Content="Launch" Style="{DynamicResource CleanButton}" Background="#2563EB"
+                                    Width="140" Height="45" Click="HandleGameLaunch"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <!-- NEWS Section -->
+                <Border Background="#1E293B" CornerRadius="10" Padding="15" Grid.Column="2" Margin="128,0,-8,0">
+                    <Grid>
+                        <Image x:Name="NewsImage" Stretch="UniformToFill" Opacity="0.6" ClipToBounds="True" HorizontalAlignment="Center"/>
+
+                        <!-- Dark Overlay -->
+                        <Rectangle Fill="#80000000" RadiusX="10" RadiusY="10"/>
+
+                        <!-- News Content -->
+                        <StackPanel Margin="36,10,36,0" VerticalAlignment="Top" Height="288">
+                            <TextBlock x:Name="NewsTitle" Text="Loading News..." Foreground="White" FontSize="22" FontWeight="Bold"/>
+                            <TextBlock x:Name="NewsDescription" Text="Please wait..." Foreground="Gray" FontSize="14" TextWrapping="Wrap" MaxWidth="250"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Grid>
+        </StackPanel>
+    </Grid>
+
+    <!-- STYLES -->
+    <Page.Resources>
+        <Style x:Key="CleanButton" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Width" Value="220"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Margin" Value="10,5,10,5"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="8" Background="{TemplateBinding Background}" Padding="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#2563EB"/>
+                                <!-- Hover effect -->
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#1E40AF"/>
+                                <!-- Click effect -->
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+</Page>

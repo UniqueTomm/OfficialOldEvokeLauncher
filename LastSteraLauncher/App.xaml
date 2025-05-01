@@ -1,0 +1,11 @@
+﻿<Application x:Class="SteraLauncher.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style TargetType="Page">
+            <Setter Property="Background" Value="#121826"/>
+            <!-- Hintergrundfarbe setzen -->
+        </Style>
+    </Application.Resources>
+</Application>

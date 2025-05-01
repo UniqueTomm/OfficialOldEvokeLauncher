@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="image.ico" />
+    <None Remove="Pages\1_iQyC_6Yfd_r3MpsgyxBPnQ.png" />
+    <None Remove="Pages\agency.jpeg" />
+    <None Remove="Pages\import.png" />
+    <None Remove="Pages\y32tacrop4w41.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DiscordRichPresence" Version="1.2.1.24" />
+    <PackageReference Include="ini-parser" Version="2.5.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Newtonsoft.Json.Bson" Version="1.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="image.ico" />
+    <Resource Include="Pages\1_iQyC_6Yfd_r3MpsgyxBPnQ.png" />
+    <Resource Include="Pages\agency.jpeg" />
+    <Resource Include="Pages\import.png" />
+    <Resource Include="Pages\y32tacrop4w41.png" />
+  </ItemGroup>
+
+</Project>

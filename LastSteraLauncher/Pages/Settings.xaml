@@ -1,0 +1,70 @@
+<Page x:Class="SteraLauncher.Pages.Settings"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Stera Settings" Background="#0F172A" Height="720" Width="1280">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="260"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar -->
+        <Border Background="#151A26" Grid.Column="0" VerticalAlignment="Stretch">
+            <StackPanel Margin="10">
+                <TextBlock Text="Evoke OGFN" Foreground="White" FontSize="32" FontWeight="Bold" 
+                           Margin="10" HorizontalAlignment="Center"/>
+
+                <Button Content="Home" Style="{DynamicResource CleanButton}" Click="HomeButton_Click"/>
+                <Button Content="Library" Style="{DynamicResource CleanButton}" Click="LibraryButton_Click"/>
+                <Button Content="Settings" Style="{DynamicResource CleanButton}" Click="SettingsButton_Click" Background="#2563EB"/>
+                <Button Content="Discord Server" Style="{DynamicResource CleanButton}" Background="#5865F2" Click="DiscordButton_Click"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Main Content -->
+        <StackPanel Margin="20,30,30,30" Grid.Column="1">
+
+            <TextBlock Text="Settings" Foreground="White" FontSize="28" FontWeight="Bold"
+                       Margin="10" HorizontalAlignment="Left"/>
+
+            <Separator Background="Gray" Height="2" Margin="0,10,0,10"/>
+            <Button Content="Logout" Style="{DynamicResource CleanButton}" Click="LogoutButton_Click" Background="Red"/>
+        </StackPanel>
+    </Grid>
+
+    <!-- STYLES -->
+    <Page.Resources>
+        <Style x:Key="CleanButton" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Width" Value="220"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Margin" Value="10,5,10,5"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="8" Background="{TemplateBinding Background}" Padding="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#2563EB"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#1E40AF"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+</Page>
